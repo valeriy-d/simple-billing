@@ -10,6 +10,7 @@ from main.forms import AccountModelForm
 from main.forms import AccountNameForm
 from utils.decorators import json_required
 from utils.auth import gen_password
+from main.commands import get_balance
 
 
 logger = logging.getLogger('main')
@@ -47,4 +48,23 @@ class RegisterAccountView(View):
             "username": account.user.username,
             "password": password,
             "currency": account.currency.alias,
+        })
+
+
+class BalanceRequestView(View):
+    def get(self, request, username):
+        if not username:
+            return JsonResponse({"error": "Username not provided"})
+
+        user = User.objects.filter(username=username)
+        if len(user) == 0:
+            return JsonResponse({"error": "User not found"})
+
+        user = user[0]
+        currency, balance = get_balance(user)
+        return JsonResponse({
+            "result": {
+                "currency": currency,
+                "balance": balance
+            }
         })
