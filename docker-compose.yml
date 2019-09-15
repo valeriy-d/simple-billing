@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  billing-api:
+    build: .
+    volumes:
+      - ./backend:/code
+    working_dir: /code
+    ports:
+      - "8095:5000"
