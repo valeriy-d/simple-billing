@@ -21,12 +21,12 @@ def get_balance(user, requested_currency=None):
         if not t.type == TransactionModel.DEBIT:
             continue
 
-        logger.debug(f"{t.amount} {t.currency_rate} {t.amount * t.currency_rate.usd_exchange_rate}")
-
+    # Сумма дебита в USD
     sum_debit = sum([t.amount * t.currency_rate.usd_exchange_rate
                      for t in all_trns
                      if t.type == TransactionModel.DEBIT])
 
+    # Сумма кредита в USD
     sum_credit = sum([t.amount * t.currency_rate.usd_exchange_rate
                      for t in all_trns
                      if t.type == TransactionModel.CREDIT])
@@ -39,6 +39,6 @@ def get_balance(user, requested_currency=None):
     if requested_currency:
         currency = requested_currency
 
-    rate = CurrencyQuotesModel.objects.filter(currency_type=currency).latest('date')
+    rate = CurrencyQuotesModel.objects.filter(currency_type=currency).latest('datetime')
 
-    return currency.alias, ((sum_debit - sum_credit) * rate.usd_exchange_rate).quantize(Decimal("1.000000"))
+    return currency.alias, ((sum_debit - sum_credit) / rate.usd_exchange_rate).quantize(Decimal("1.000000"))

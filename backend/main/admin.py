@@ -10,8 +10,8 @@ from main.models import TransactionModel
 
 
 class CurrencyQuotesAdmin(admin.ModelAdmin):
-    list_display = ['date', 'currency_type', 'usd_exchange_rate']
-    list_filter = ['date', 'currency_type']
+    list_display = ['datetime', 'currency_type', 'usd_exchange_rate']
+    list_filter = ['datetime', 'currency_type']
 
 
 class TransactionInlineAdmin(admin.TabularInline):
@@ -39,6 +39,7 @@ class OperationAdmin(admin.ModelAdmin):
 
 class TransactionAdmin(admin.ModelAdmin):
     list_display = ['datetime', 'account', 'operation', 'type', 'currency_rate', 'amount']
+    list_filter = ['datetime', 'account']
 
 
 admin.site.register(CountryModel)

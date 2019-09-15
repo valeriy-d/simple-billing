@@ -30,10 +30,10 @@ class CurrencyTypeModel(models.Model):
 class CurrencyQuotesModel(models.Model):
     currency_type = models.ForeignKey(CurrencyTypeModel, on_delete=models.PROTECT)
     usd_exchange_rate = models.DecimalField("USD exchange rate", max_digits=16, decimal_places=6)
-    date = models.DateField("Date of value")
+    datetime = models.DateTimeField("Datetime of value")
 
     def __str__(self):
-        return f"1 {self.currency_type.alias} - {self.usd_exchange_rate} USD on {self.date}"
+        return f"1 {self.currency_type.alias} - {self.usd_exchange_rate} USD on {self.datetime}"
 
 
 class AccountModel(models.Model):
