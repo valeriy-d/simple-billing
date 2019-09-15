@@ -30,6 +30,10 @@ class CurrencyTypeModel(models.Model):
 class CurrencyQuotesModel(models.Model):
     currency_type = models.ForeignKey(CurrencyTypeModel, on_delete=models.PROTECT)
     usd_exchange_rate = models.DecimalField("USD exchange rate", max_digits=16, decimal_places=6)
+    datetime = models.DateTimeField("Datetime of value")
+
+    def __str__(self):
+        return f"1 {self.currency_type.alias} - {self.usd_exchange_rate} USD on {self.datetime}"
 
 
 class AccountModel(models.Model):
@@ -53,6 +57,9 @@ class OperationModel(models.Model):
     type = models.IntegerField("Transaction type", choices=OP_TYPE)
     datetime = models.DateTimeField("Operation datetime")
 
+    def __str__(self):
+        return f"{self.pk} {self.type} {self.datetime}"
+
 
 class TransactionModel(models.Model):
     DEBIT = 0
@@ -67,9 +74,5 @@ class TransactionModel(models.Model):
     operation = models.ForeignKey(OperationModel, on_delete=models.PROTECT)
     type = models.IntegerField("Transaction type", choices=TRN_TYPE)
     datetime = models.DateTimeField("Transaction datetime")
-    currency = models.ForeignKey(CurrencyTypeModel, on_delete=models.PROTECT)
-    exchange_quote = models.DecimalField("USD exchange rate",
-                                         max_digits=16,
-                                         decimal_places=6,
-                                         help_text="The USD exchange rate on operation moment")
+    currency_rate = models.ForeignKey(CurrencyQuotesModel, on_delete=models.PROTECT)
     amount = models.IntegerField("Operations amount")
