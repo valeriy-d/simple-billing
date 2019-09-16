@@ -23,3 +23,10 @@ class AccountRefillForm(forms.Form):
     currency = forms.CharField(max_length=5)
     amount = forms.DecimalField(max_digits=16, decimal_places=6)
     username = forms.CharField(max_length=256)
+
+
+class TransferMoneyForm(forms.Form):
+    username_from = forms.CharField(max_length=256)
+    username_to = forms.CharField(max_length=256)
+    amount = forms.DecimalField(max_digits=16, decimal_places=6)
+    currency = forms.CharField(max_length=5)
