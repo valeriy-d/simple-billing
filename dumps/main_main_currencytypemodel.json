@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "US Dollar",
+    "alias": "USD"
+  },
+  {
+    "id": 2,
+    "name": "Euro",
+    "alias": "EUR"
+  },
+  {
+    "id": 3,
+    "name": "Canadian Dollar",
+    "alias": "CAD"
+  },
+  {
+    "id": 4,
+    "name": "Chinese Yuan Renminb",
+    "alias": "CNY"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "New York City",
+    "alias": "new_york",
+    "country_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Toronto",
+    "alias": "toronto",
+    "country_id": 3
+  },
+  {
+    "id": 3,
+    "name": "Ottawa",
+    "alias": "ottawa",
+    "country_id": 3
+  },
+  {
+    "id": 4,
+    "name": "Washington",
+    "alias": "washington",
+    "country_id": 1
+  }
+]
