@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "7927504b-7086-4f15-a2f8-3679c56114fc",
+		"name": "SimpleBilling",
+		"description": "Test work",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"last_name\": \"Arya\",\n\t\"first_name\": \"Stark\",\n\t\"username\": \"astark\",\n\t\"currency\": 2,\n\t\"location\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8095/register-account/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"register-account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/petr/balance/cad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"petr",
+						"balance",
+						"cad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Currency Rate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"currency\": \"eur\",\n\t\"usd_exchange_rate\": 1.115657\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8095/currency/upload/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"currency",
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Refill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"currency\": \"usd\",\n\t\"amount\": 10.00000,\n\t\"username\": \"gertruda\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8095/balance/refill/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"balance",
+						"refill",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Money",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username_from\": \"gertruda\",\n\t\"username_to\": \"jorah\",\n\t\"amount\": 4,\n\t\"currency\": \"usd\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8095/transfer-money/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"transfer-money",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
