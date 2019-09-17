@@ -2,3 +2,4 @@ Django==2.2.5
 pytest-django==3.5.1
 pytest-cov==2.7.1
 pytest-html==1.21.1
+dicttoxml==1.7.4

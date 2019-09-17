@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "usd_exchange_rate": 1.11565,
+    "currency_type_id": 2,
+    "datetime": "2019-09-15 15:11:01.999758"
+  },
+  {
+    "id": 2,
+    "usd_exchange_rate": 0.753463,
+    "currency_type_id": 3,
+    "datetime": "2019-09-15 15:11:01.999758"
+  },
+  {
+    "id": 3,
+    "usd_exchange_rate": 0.141255,
+    "currency_type_id": 4,
+    "datetime": "2019-09-15 15:11:01.999758"
+  },
+  {
+    "id": 4,
+    "usd_exchange_rate": 1,
+    "currency_type_id": 1,
+    "datetime": "2019-09-15 15:11:01.999758"
+  },
+  {
+    "id": 5,
+    "usd_exchange_rate": 1.11443,
+    "currency_type_id": 2,
+    "datetime": "2019-09-13 15:11:01"
+  },
+  {
+    "id": 6,
+    "usd_exchange_rate": 1.114439,
+    "currency_type_id": 2,
+    "datetime": "2019-09-14 15:11:01"
+  },
+  {
+    "id": 8,
+    "usd_exchange_rate": 1.115657,
+    "currency_type_id": 2,
+    "datetime": "2019-09-15 15:21:23.319048"
+  },
+  {
+    "id": 9,
+    "usd_exchange_rate": 1.10691,
+    "currency_type_id": 2,
+    "datetime": "2019-09-16 05:44:59.712520"
+  },
+  {
+    "id": 10,
+    "usd_exchange_rate": 0.755604,
+    "currency_type_id": 3,
+    "datetime": "2019-09-16 06:03:01.664184"
+  }
+]

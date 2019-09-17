@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "currency_id": 1,
+    "location_id": 1,
+    "user_id": 2
+  },
+  {
+    "id": 2,
+    "currency_id": 3,
+    "location_id": 1,
+    "user_id": 6
+  }
+]
